@@ -1,9 +1,9 @@
 #include <ArduinoJson.h>
 
-//#define BLYNK_PRINT Serial
+#define BLYNK_PRINT Serial
 #include <BlynkSimpleEsp8266.h>
 
-char auth[] = "Iw5eS_2dkuch2aKBXkKpT_zyrrbHJTF8";
+char auth[] = "xCwm15Cqsx9oSMK3kY9_yrLto-JO_aVg";
 
 #include <ESP8266WiFiMulti.h>
 #include <ESP8266WiFi.h>
@@ -21,7 +21,7 @@ bool primera_lectura = false;
 
 void setup(){
 
- delay(10);
+  delay(10);
   Serial.begin(115200);
 
 
@@ -36,7 +36,6 @@ void setup(){
   //Serial.println("Conectado con éxito, mi IP es: ");
   //Serial.println(WiFi.localIP());
   Blynk.begin(auth, ssid, pass);
-
 }
 
 void loop(){
@@ -79,24 +78,24 @@ void loop(){
 
           double temp = data["main"]["temp"];
           double hum = data["main"]["humidity"];
-          double temp_min = data["main"]["temp_min"];
-          double temp_max = data["main"]["temp_max"];
+          //double temp_min = data["main"]["temp_min"];
+          //double temp_max = data["main"]["temp_max"];
           temp = temp - 273.15; //convierte kelvin a centigrados
-          temp_min = temp_min - 273.15; //convierte kelvin a centigrados
-          temp_max = temp_max - 273.15; //convierte kelvin a centigrados
+          //temp_min = temp_min - 273.15; //convierte kelvin a centigrados
+          //temp_max = temp_max - 273.15; //convierte kelvin a centigrados
           String valor_temperatura = String(temp);
           String valor_humedad = String(hum);
-          String valor_temperaturamin = String(temp_min);
-          String valor_temperaturamax = String(temp_max);
+          //String valor_temperaturamin = String(temp_min);
+          //String valor_temperaturamax = String(temp_max);
           Serial.println("");
           Serial.print("T:");
           Serial.println(valor_temperatura);
           Serial.print("H:");
           Serial.println(valor_humedad);        
-          Serial.print("TMn:");
-          Serial.println(valor_temperaturamin);
-          Serial.print("TMx:");
-          Serial.println(valor_temperaturamax);
+          //Serial.print("TMn:");
+          //Serial.println(valor_temperaturamin);
+          //Serial.print("TMx:");
+          //Serial.println(valor_temperaturamax);
         
         }
       }
