@@ -3,7 +3,7 @@
 #define BLYNK_PRINT Serial
 #include <BlynkSimpleEsp8266.h>
 
-char auth[] = "xCwm15Cqsx9oSMK3kY9_yrLto-JO_aVg";
+char auth[] = "rOyKE9YGU76YkQHOl97wGBDumro--uCL";
 
 #include <ESP8266WiFiMulti.h>
 #include <ESP8266WiFi.h>
@@ -20,11 +20,8 @@ int intervalo_lectura = 600000; //600000 = 10 minutos
 bool primera_lectura = false;
 
 void setup(){
-
   delay(10);
   Serial.begin(115200);
-
-
   WiFi.begin(ssid, pass);
 
   //Serial.println("Conectando...");
